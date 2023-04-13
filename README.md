@@ -1,16 +1,7 @@
-# minimal_todo_app
+# Minimal Todo App
+A simple Todo App to track your day
 
-A new Flutter project.
 
-## Getting Started
+[![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&align=center&fontWeight=normal&lineCount=1&theme=discord&line1=flutter,Flutter,02569B;hackthebox,Bloc,14ebdc;apachehive,Hive,18dfe2;)](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&align=center&fontWeight=normal&lineCount=1&theme=discord&line1=flutter,Flutter,02569B;hackthebox,Bloc,14ebdc;apachehive,Hive,18dfe2;)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![todo](https://user-images.githubusercontent.com/86926597/231823442-98ec9b55-494c-4293-9397-db195dd86f71.gif)
