@@ -1,7 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:minimal_todo_app/presentation/widgets/vibrate_widget.dart';
 
 import '../../cubit/todo_cubit.dart';
 import 'todo_tile.dart';
@@ -15,12 +16,11 @@ class CustomListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: Colors.yellow[200],
-        shadowColor: Colors.yellow[200],
+        canvasColor: Colors.transparent,
+        shadowColor: Colors.transparent,
       ),
       child: BlocBuilder<TodoCubit, TodoState>(
         builder: (context, state) {
-          log('bloc builder called insiide custom list view');
           return ReorderableListView.builder(
             itemCount: state.taskList.length,
             itemBuilder: (context, index) {
@@ -29,8 +29,14 @@ class CustomListView extends StatelessWidget {
                 index: index,
               );
             },
-            onReorder: ((oldIndex, newIndex) =>
-                context.read<TodoCubit>().reorderList(oldIndex, newIndex)),
+            onReorder: ((oldIndex, newIndex) {
+              context.read<TodoCubit>().reorderList(oldIndex, newIndex);
+            }),
+            proxyDecorator: (child, index, animation) => Material(
+              child: VibrateWidget(
+                child: child,
+              ),
+            ),
           );
         },
       ),

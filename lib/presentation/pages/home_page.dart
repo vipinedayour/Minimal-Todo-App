@@ -1,11 +1,10 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:minimal_todo_app/cubit/todo_cubit.dart';
 import 'package:minimal_todo_app/presentation/widgets/add_new_task.dart';
 import '../widgets/custom_list_view.dart';
-import '../widgets/todo_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,6 +36,7 @@ class _HomePageState extends State<HomePage> {
       body: const CustomListView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          HapticFeedback.mediumImpact();
           showDialog(
             context: context,
             builder: (context) {
